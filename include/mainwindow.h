@@ -16,6 +16,9 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    void RealTimePlotter();
+public slots:
+    void updateGraph();
 
 private:
     Ui::MainWindow *ui;

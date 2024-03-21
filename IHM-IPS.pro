@@ -1,7 +1,7 @@
-QT       += core gui charts
+QT       += core gui
 
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets printsupport
 
 CONFIG += c++17
 
@@ -14,12 +14,14 @@ SOURCES += \
     src/connectstm.cpp \
     main.cpp \
     src/mainwindow.cpp \
+    src/qcustomplot.cpp \
     src/showgraphs.cpp \
     src/showvalues.cpp
 
 HEADERS += \
     include/connectstm.h \
     include/mainwindow.h \
+    include/qcustomplot.h \
     include/showgraphs.h \
     include/showvalues.h
 

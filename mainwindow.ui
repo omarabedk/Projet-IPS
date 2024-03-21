@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>543</width>
-    <height>375</height>
+    <height>580</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -35,7 +35,7 @@
      </spacer>
     </item>
     <item row="10" column="2">
-     <widget class="QComboBox" name="comboBox_2">
+     <widget class="QComboBox" name="setHighUnitCombo">
       <item>
        <property name="text">
         <string>m</string>
@@ -48,6 +48,13 @@
       </item>
      </widget>
     </item>
+    <item row="9" column="1">
+     <widget class="QLabel" name="highValueLbl">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
     <item row="3" column="0">
      <widget class="QLabel" name="label_3">
       <property name="text">
@@ -56,7 +63,7 @@
      </widget>
     </item>
     <item row="11" column="1">
-     <widget class="QLineEdit" name="lineEdit_4"/>
+     <widget class="QLineEdit" name="setGaintxt"/>
     </item>
     <item row="2" column="0">
      <widget class="QLabel" name="label_2">
@@ -66,7 +73,7 @@
      </widget>
     </item>
     <item row="10" column="1">
-     <widget class="QLineEdit" name="lineEdit_3"/>
+     <widget class="QLineEdit" name="setHightxt"/>
     </item>
     <item row="9" column="0">
      <widget class="QLabel" name="label_4">
@@ -109,7 +116,7 @@
      </widget>
     </item>
     <item row="9" column="2">
-     <widget class="QComboBox" name="comboBox">
+     <widget class="QComboBox" name="highValueUnitCombo">
       <item>
        <property name="text">
         <string>m</string>
@@ -137,7 +144,7 @@
      </widget>
     </item>
     <item row="2" column="1">
-     <widget class="QSpinBox" name="spinBox"/>
+     <widget class="QSpinBox" name="portNumberSpin"/>
     </item>
     <item row="11" column="0">
      <widget class="QLabel" name="label_6">
@@ -147,14 +154,10 @@
      </widget>
     </item>
     <item row="3" column="1">
-     <widget class="QLineEdit" name="lineEdit"/>
+     <widget class="QLineEdit" name="baudeRatetxt"/>
     </item>
-    <item row="9" column="1">
-     <widget class="QLabel" name="label_7">
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
+    <item row="12" column="1">
+     <widget class="QCustomPlot" name="HighTimeGraph" native="true"/>
     </item>
    </layout>
   </widget>
@@ -173,6 +176,14 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QCustomPlot</class>
+   <extends>QWidget</extends>
+   <header>qcustomplot.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
