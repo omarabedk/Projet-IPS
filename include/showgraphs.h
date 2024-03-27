@@ -3,17 +3,20 @@
 
 #include <QObject>
 #include "mainwindow.h"
+#include "ui_mainwindow.h"
 
 class ShowGraphs : public QObject
 {
     Q_OBJECT
 public:
     ShowGraphs(Ui::MainWindow *ui);
-    void RealTimePlotter(Ui::MainWindow *ui);
+    void HighGraphTimer();
+    void PowerGraphTimer();
 public slots:
-    void updateGraph(Ui::MainWindow *ui);
+    void updateHighGraph();
+    void updatePowerGraph();
 private:
-
+    Ui::MainWindow *mainUi;
 };
 
 
