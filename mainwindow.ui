@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1108</width>
-    <height>594</height>
+    <height>792</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -341,10 +341,10 @@
       </property>
      </widget>
     </item>
-    <item row="12" column="2">
+    <item row="12" column="2" colspan="2">
      <widget class="QCustomPlot" name="PowerTimeGraph" native="true"/>
     </item>
-    <item row="12" column="3" colspan="2">
+    <item row="12" column="4" colspan="2">
      <widget class="QCustomPlot" name="PowerHighGraph" native="true">
       <property name="baseSize">
        <size>

@@ -12,9 +12,12 @@ public:
     ShowGraphs(Ui::MainWindow *ui);
     void HighGraphTimer();
     void PowerGraphTimer();
+    void PowerHighGraphTimer();
+
 public slots:
     void updateHighGraph();
     void updatePowerGraph();
+    void updatePowerHighGraph();
 private:
     Ui::MainWindow *mainUi;
 };
