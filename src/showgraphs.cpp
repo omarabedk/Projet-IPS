@@ -8,6 +8,7 @@ ShowGraphs::ShowGraphs(Ui::MainWindow *ui):mainUi(ui)
     PowerHighGraphTimer();
 }
 
+
 void ShowGraphs::HighGraphTimer() {
     mainUi->HighTimeGraph->addGraph();
     mainUi->HighTimeGraph->plotLayout()->insertRow(0); // Insert a new row at the top for the title
