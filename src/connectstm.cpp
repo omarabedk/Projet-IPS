@@ -1,3 +1,10 @@
 #include "connectstm.h"
 
-ConnectSTM::ConnectSTM() {}
+ConnectSTM::ConnectSTM() {
+
+
+}
+
+void ConnectSTM::connect(){
+
+}

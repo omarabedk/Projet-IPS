@@ -2,7 +2,7 @@
 #define SHOWGRAPHS_H
 
 #include <QObject>
-#include "mainwindow.h"
+
 #include "ui_mainwindow.h"
 
 class ShowGraphs : public QObject
@@ -18,6 +18,7 @@ public slots:
     void updateHighGraph();
     void updatePowerGraph();
     void updatePowerHighGraph();
+
 private:
     Ui::MainWindow *mainUi;
 };

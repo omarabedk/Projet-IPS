@@ -1,7 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "showgraphs.h"
-#include <QFile>
+
+//#include <QFile>
 
 ShowGraphs *showGraphs;
 
@@ -23,5 +23,11 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+
+void MainWindow::on_ConnectBttn_clicked()
+{
+
 }
 

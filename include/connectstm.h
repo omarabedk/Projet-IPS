@@ -5,6 +5,7 @@ class ConnectSTM
 {
 public:
     ConnectSTM();
+    void connect();
 };
 
 #endif // CONNECTSTM_H

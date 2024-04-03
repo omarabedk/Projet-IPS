@@ -1,5 +1,4 @@
 #include "showgraphs.h"
-#include "ui_mainwindow.h"
 
 ShowGraphs::ShowGraphs(Ui::MainWindow *ui):mainUi(ui)
 {
@@ -99,8 +98,6 @@ void ShowGraphs::PowerHighGraphTimer() {
 
 
 
-
-
 void ShowGraphs::updatePowerHighGraph() {
     // Update power value
     bool powerOk;
@@ -129,4 +126,5 @@ void ShowGraphs::updatePowerHighGraph() {
     // Replot the graph
     mainUi->PowerHighGraph->replot();
 }
+
 
