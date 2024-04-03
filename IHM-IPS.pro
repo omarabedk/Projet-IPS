@@ -1,4 +1,6 @@
 QT       += core gui
+QT += serialport
+
 
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets printsupport
@@ -11,19 +13,15 @@ CONFIG += c++17
 INCLUDEPATH += include/
 VPATH += src
 SOURCES += \
-    src/connectstm.cpp \
     main.cpp \
     src/mainwindow.cpp \
     src/qcustomplot.cpp \
-    src/showgraphs.cpp \
-    src/showvalues.cpp
+    src/showgraphs.cpp
 
 HEADERS += \
-    include/connectstm.h \
     include/mainwindow.h \
     include/qcustomplot.h \
-    include/showgraphs.h \
-    include/showvalues.h
+    include/showgraphs.h
 
 FORMS += \
     mainwindow.ui
