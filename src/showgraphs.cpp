@@ -23,7 +23,7 @@ void ShowGraphs::HighGraphTimer() {
 
 void ShowGraphs::updateHighGraph() {
     bool ok;
-    double value = mainUi->setHightxt->text().toDouble(&ok);
+    double value = mainUi->highValueLbl->text().toDouble(&ok);
     if (ok) {
         QCPGraph *graph = mainUi->HighTimeGraph->graph(0);
         int dataCount = graph->dataCount();
@@ -101,7 +101,7 @@ void ShowGraphs::PowerHighGraphTimer() {
 void ShowGraphs::updatePowerHighGraph() {
     // Update power value
     bool powerOk;
-    double powerValue = mainUi->setGaintxt->text().toDouble(&powerOk);
+    double powerValue = mainUi->PowerValueLbl->text().toDouble(&powerOk);
     if (powerOk) {
         QCPGraph *powerGraph = mainUi->PowerHighGraph->graph(0);
         int powerDataCount = powerGraph->dataCount();
@@ -111,7 +111,7 @@ void ShowGraphs::updatePowerHighGraph() {
 
     // Update high value
     bool highOk;
-    double highValue = mainUi->setHightxt->text().toDouble(&highOk);
+    double highValue = mainUi->highValueLbl->text().toDouble(&highOk);
     if (highOk) {
         QCPGraph *highGraph = mainUi->PowerHighGraph->graph(1); // Use graph index 1 for high
         int highDataCount = highGraph->dataCount();

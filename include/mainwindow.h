@@ -21,8 +21,13 @@ public:
     ~MainWindow();
     void openPort();
 
+
 private slots:
     void on_ConnectBttn_clicked();
+    void ReadSerialData();
+
+
+    void on_DisconnectBttn_clicked();
 
 private:
     Ui::MainWindow *ui;
