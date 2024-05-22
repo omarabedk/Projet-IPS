@@ -49,7 +49,7 @@ void ShowGraphs::PowerGraphTimer() {
 
 void ShowGraphs::updatePowerGraph() {
     bool ok;
-    double value = mainUi->setGaintxt->text().toDouble(&ok);
+    double value = mainUi->PowerValueLbl->text().toDouble(&ok);
     if (ok) {
         QCPGraph *graph = mainUi->PowerTimeGraph->graph(0);
         int dataCount = graph->dataCount();

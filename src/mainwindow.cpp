@@ -93,9 +93,17 @@ void MainWindow::ReadSerialData()
     }
     else
     {
-        if(data[0]=='H'){
-        QString strData = QString::fromUtf8(data.mid(1));
-        ui->highValueLbl->setText(strData);
+        if (data[0] == 'H') {
+            QString HighData = QString::fromUtf8(data.mid(1));
+            int indexP = HighData.indexOf("P");
+            if (indexP != -1) {
+                HighData.truncate(indexP);
+            }
+            ui->highValueLbl->setText(HighData);
+        }
+        else if(data[0]=='P'){
+            QString PowerData = QString::fromUtf8(data.mid(1));
+            ui->PowerValueLbl->setText(PowerData);
         }
         else{
             qDebug()<<"Data type not specified";
@@ -111,5 +119,38 @@ void MainWindow::on_DisconnectBttn_clicked()
     port->close();
     ui->ErrorLbl->setText("Disconnected");
     ui->ErrorLbl->setStyleSheet("QLabel { color : red; }");
+    ui->highValueLbl->setText("");
+    ui->PowerValueLbl->setText("");
+}
+
+
+void MainWindow::on_sendHighBttn_clicked()
+{
+    QString highData = ui->setHightxt->text();
+    if (!highData.isEmpty())
+    {
+        QByteArray dataToSend = 'H' + highData.toUtf8();
+        port->write(dataToSend);
+        qDebug() << "Sent High Data:" << dataToSend;
+    }
+    else
+    {
+        qDebug() << "High Data text box is empty.";
+    }
+}
+
+void MainWindow::on_sendGainBttn_clicked()
+{
+    QString gainData = ui->setGaintxt->text();
+    if (!gainData.isEmpty())
+    {
+        QByteArray dataToSend = 'G' + gainData.toUtf8();
+        port->write(dataToSend);
+        qDebug() << "Sent Gain Data:" << dataToSend;
+    }
+    else
+    {
+        qDebug() << "Gain Data text box is empty.";
+    }
 }
 

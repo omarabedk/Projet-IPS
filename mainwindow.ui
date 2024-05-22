@@ -95,6 +95,9 @@
         <height>50</height>
        </size>
       </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
       <property name="styleSheet">
        <string notr="true">font-size: 20px;text-align: center;background-color: #00B8EE;</string>
       </property>
@@ -196,7 +199,7 @@
          <x>120</x>
          <y>30</y>
          <width>121</width>
-         <height>31</height>
+         <height>21</height>
         </rect>
        </property>
        <property name="maximumSize">
@@ -213,9 +216,9 @@
        <property name="geometry">
         <rect>
          <x>110</x>
-         <y>60</y>
+         <y>70</y>
          <width>131</width>
-         <height>31</height>
+         <height>21</height>
         </rect>
        </property>
        <property name="text">
@@ -259,6 +262,9 @@
          <width>171</width>
          <height>29</height>
         </rect>
+       </property>
+       <property name="maximum">
+        <number>200</number>
        </property>
       </widget>
       <widget class="QLabel" name="label_12">
@@ -322,14 +328,39 @@
         </rect>
        </property>
       </widget>
-      <widget class="QPushButton" name="sendBttn">
+      <widget class="QPushButton" name="sendHighBttn">
        <property name="geometry">
         <rect>
          <x>310</x>
          <y>40</y>
          <width>131</width>
-         <height>51</height>
+         <height>31</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>7</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Send</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="sendGainBttn">
+       <property name="geometry">
+        <rect>
+         <x>310</x>
+         <y>80</y>
+         <width>131</width>
+         <height>29</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>7</pointsize>
+         <bold>true</bold>
+        </font>
        </property>
        <property name="text">
         <string>Send</string>
@@ -493,7 +524,7 @@
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color: red; border-radius: 8px
+        <string notr="true">background-color: red; border-radius: 8px;
 </string>
        </property>
        <property name="text">

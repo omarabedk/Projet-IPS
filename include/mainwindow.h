@@ -25,9 +25,9 @@ public:
 private slots:
     void on_ConnectBttn_clicked();
     void ReadSerialData();
-
-
     void on_DisconnectBttn_clicked();
+    void on_sendHighBttn_clicked();
+    void on_sendGainBttn_clicked();
 
 private:
     Ui::MainWindow *ui;
