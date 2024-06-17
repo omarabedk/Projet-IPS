@@ -320,16 +320,6 @@ background-color: #00B8EE;</string>
         <string>Set Gain</string>
        </property>
       </widget>
-      <widget class="QSpinBox" name="setGaintxt">
-       <property name="geometry">
-        <rect>
-         <x>90</x>
-         <y>80</y>
-         <width>175</width>
-         <height>29</height>
-        </rect>
-       </property>
-      </widget>
       <widget class="QPushButton" name="sendHighBttn">
        <property name="geometry">
         <rect>
@@ -366,6 +356,22 @@ background-color: #00B8EE;</string>
        </property>
        <property name="text">
         <string>Send</string>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="setGaintxt">
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>80</y>
+         <width>171</width>
+         <height>29</height>
+        </rect>
+       </property>
+       <property name="maximum">
+        <double>1.000000000000000</double>
+       </property>
+       <property name="singleStep">
+        <double>0.010000000000000</double>
        </property>
       </widget>
      </widget>
@@ -465,8 +471,7 @@ background-color: #00B8EE;</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color: green; border-radius: 8px
-</string>
+        <string notr="true"/>
        </property>
        <property name="text">
         <string>Connect</string>

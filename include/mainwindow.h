@@ -30,6 +30,8 @@ private slots:
     void on_sendGainBttn_clicked();
 
 private:
+    QByteArray serialBuffer;
+
     Ui::MainWindow *ui;
     QSerialPort *port;
     int baud_value;
