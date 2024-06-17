@@ -13,6 +13,7 @@ public:
     void HighGraphTimer();
     void PowerGraphTimer();
     void PowerHighGraphTimer();
+    void drawConstantLine(int value);
 
 public slots:
     void updateHighGraph();
@@ -20,7 +21,9 @@ public slots:
     void updatePowerHighGraph();
 
 private:
+    QCPGraph *constantLineGraph;
     Ui::MainWindow *mainUi;
+    int threshold = NULL;
 };
 
 

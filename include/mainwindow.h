@@ -4,7 +4,7 @@
 #include <QMainWindow>
 #include <QtSerialPort/QSerialPortInfo>
 #include <QtSerialPort/QSerialPort>
-
+#include <QTimer>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -31,7 +31,7 @@ private slots:
 
 private:
     QByteArray serialBuffer;
-
+    QTimer *timer;
     Ui::MainWindow *ui;
     QSerialPort *port;
     int baud_value;

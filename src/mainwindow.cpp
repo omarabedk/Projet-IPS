@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include <QtSerialPort/QSerialPortInfo>
 #include <QtSerialPort/QSerialPort>
+#include <QTimer>
 #include "showgraphs.h"
 
 ShowGraphs *showGraphs;
@@ -20,6 +21,10 @@ MainWindow::MainWindow(QWidget *parent)
                          "QPushButton:hover { background-color: #27ae60; }";
     this->setStyleSheet(styleSheet);
     port = new QSerialPort(this);
+
+    // Timer setup
+    timer = new QTimer(this);  // Initialize timer
+    connect(timer, &QTimer::timeout, this, &MainWindow::ReadSerialData);  // Connect timer signal to ReadSerialData slot
 }
 
 MainWindow::~MainWindow()
@@ -76,7 +81,8 @@ void MainWindow::openPort()
 
         port->clear();
 
-        connect(port, SIGNAL(readyRead()), this, SLOT(ReadSerialData()));
+        // Start the timer with 1-second interval
+        timer->start(1000);
     }
     else
     {
@@ -94,8 +100,6 @@ void MainWindow::openPort()
 /**************************************************************************************/
 /*                              READ DATA FROM STM32                                  */
 /**************************************************************************************/
-
-
 
 void MainWindow::ReadSerialData() {
     serialBuffer.append(port->readAll());
@@ -122,7 +126,6 @@ void MainWindow::ReadSerialData() {
 /*                              DISCONNECTION                                         */
 /**************************************************************************************/
 
-
 void MainWindow::on_DisconnectBttn_clicked()
 {
     port->close();
@@ -130,6 +133,7 @@ void MainWindow::on_DisconnectBttn_clicked()
     ui->ErrorLbl->setStyleSheet("QLabel { color : red; }");
     ui->highValueLbl->setText("");
     ui->PowerValueLbl->setText("");
+    timer->stop();  // Stop the timer when disconnected
 }
 
 /**************************************************************************************/
@@ -142,10 +146,12 @@ void MainWindow::on_sendHighBttn_clicked()
     if (!highData.isEmpty())
     {
         for (int i=0;i<100;i++){
-        QByteArray dataToSend = 'H' + highData.toUtf8();
-        port->write(dataToSend);
-        qDebug() << "Sent High Data:" << dataToSend;
+            QByteArray dataToSend = 'H' + highData.toUtf8();
+            port->write(dataToSend);
+            qDebug() << "Sent High Data:" << dataToSend;
         }
+        int HighDataInt = highData.toInt();
+        showGraphs->drawConstantLine(HighDataInt);
     }
     else
     {
@@ -164,9 +170,9 @@ void MainWindow::on_sendGainBttn_clicked()
     if (!gainData.isEmpty())
     {
         for (int i=0;i<100;i++){
-        QByteArray dataToSend = 'G' + gainData.toUtf8();
-        port->write(dataToSend);
-        qDebug() << "Sent Gain Data:" << dataToSend;
+            QByteArray dataToSend = 'G' + gainData.toUtf8();
+            port->write(dataToSend);
+            qDebug() << "Sent Gain Data:" << dataToSend;
         }
     }
     else
@@ -175,4 +181,3 @@ void MainWindow::on_sendGainBttn_clicked()
     }
 
 }
-
