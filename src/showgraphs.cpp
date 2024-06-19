@@ -113,7 +113,7 @@ void ShowGraphs::PowerHighGraphTimer() {
     mainUi->PowerHighGraph->graph(0)->setPen(QPen(Qt::blue));
 
     mainUi->PowerHighGraph->addGraph(mainUi->PowerHighGraph->xAxis, mainUi->PowerHighGraph->yAxis2);
-    mainUi->PowerHighGraph->graph(1)->setName("High (meters)");
+    mainUi->PowerHighGraph->graph(1)->setName("High (mm)");
     mainUi->PowerHighGraph->graph(1)->setPen(QPen(Qt::red));
 
     mainUi->PowerHighGraph->legend->setVisible(true);
@@ -122,7 +122,7 @@ void ShowGraphs::PowerHighGraphTimer() {
 
     mainUi->PowerHighGraph->xAxis->setLabel("Time (seconds)");
     mainUi->PowerHighGraph->yAxis->setLabel("Power (watt)");
-    mainUi->PowerHighGraph->yAxis2->setLabel("High (meters)");
+    mainUi->PowerHighGraph->yAxis2->setLabel("High (mm)");
 
     mainUi->PowerHighGraph->yAxis2->setVisible(true);
 
